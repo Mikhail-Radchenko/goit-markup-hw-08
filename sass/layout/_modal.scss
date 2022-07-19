@@ -1,0 +1,226 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity $transition, visibility $transition;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.modal {
+  position: absolute;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-360deg);
+  max-width: 450px;
+  width: 100%;
+  min-height: 609px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: $prymari-white-color;
+  transition: transform $transition;
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+    min-height: 581px;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $prymari-white-color;
+  cursor: pointer;
+  transition: fill $transition;
+}
+.modal-close-button:hover, .modal-close-button:focus {
+  fill: $accent-color;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.order-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $title-text-color;
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  outline: transparent;
+  transition: border $transition;
+}
+.modal-input:focus {
+  border: 1px solid rgb(33, 150, 243);
+}
+
+.modal-input:focus + .input-icon {
+  fill: rgb(33, 150, 243);
+}
+
+.form-input {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill $transition;
+}
+
+.form-lable {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: $p-text-color;
+}
+
+.form-text {
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  resize: none;
+  transition: border $transition;
+}
+.form-text:focus {
+  border: 1px solid rgb(33, 150, 243);
+}
+
+.area-comment {
+  margin-bottom: 20px;
+}
+
+.terms-text {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: $p-text-color;
+}
+@media screen and (min-width: 446px) {
+  .terms-text {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .terms-text {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.terms-text .terms__link {
+  position: relative;
+  color: $accent-color;
+}
+
+.terms-text .terms__link::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: $accent-color;
+  bottom: 6px;
+  right: 0px;
+}
+
+// .terms-text {
+//   color: rgb(33, 150, 243);
+// }
+
+.modal-form-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(33, 33, 33);
+  border-radius: 4px;
+  transition: background-color $transition, border $transition;
+}
+@media screen and (min-width: 446px) {
+  .modal-form-icon {
+    display: flex;
+  }
+}
+      .modal-check-icon {
+  fill: transparent;
+  transition: fill $transition;
+}
+
+.terms-input:checked + .terms-text .modal-form-icon {
+  background-color: $accent-color;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+}
+
+.terms-input:focus + .terms-text .modal-form-icon {
+  border: 1px solid $accent-color;
+}
+
+.terms-input:checked + .terms-text .modal-check-icon {
+  fill: $prymari-white-color;
+}
+
+.form-field-check {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.button-form {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color $transition;
+
+
+&:hover, 
+&:focus {
+  background-color: $button-hover-focus;}
+
+}
