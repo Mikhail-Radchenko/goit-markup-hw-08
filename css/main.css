@@ -246,12 +246,12 @@ img {
   color: #2196f3;
 }
 
-.menu__link--active {
+.menu__current {
   position: relative;
   color: #2196f3;
 }
 
-.menu__link--active::after {
+.menu__current::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -653,7 +653,7 @@ img {
   background-color: #f5f4fa;
 }
 
-.team__list {
+.staff__list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -790,7 +790,7 @@ img {
   border: 1px solid #188ce8;
 }
 .clients-list__link .clients-list__icon {
-  color: red;
+  fill: currentColor;
 }
 .clients-list__link .clients-list__link:hover .clients-list__icon,
 .clients-list__link .clients-list__link:focus .clients-list__icon {
@@ -810,6 +810,7 @@ img {
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  margin-bottom: 20px;
   color: #2196f3;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -836,13 +837,13 @@ img {
   color: #212121;
 }
 
-.footer__block {
+.footer__container {
   display: flex;
   flex-direction: column;
 }
 
 @media screen and (min-width: 1200px) {
-  .footer__block {
+  .footer__container {
     flex-direction: row;
     align-items: baseline;
   }
@@ -1414,8 +1415,20 @@ img {
     line-height: 1.71;
   }
 }
-.terms-text {
-  color: rgb(33, 150, 243);
+.terms-text .terms__link {
+  position: relative;
+  color: #2196f3;
+}
+
+.terms-text .terms__link::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #2196f3;
+  bottom: 6px;
+  right: 0px;
 }
 
 .modal-form-icon {
